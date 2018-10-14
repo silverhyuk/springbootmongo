@@ -8,3 +8,4 @@
   >> - use test
   >> - db.accounts.find({})
 
+- embeded mongodb 사용하여 TEST
