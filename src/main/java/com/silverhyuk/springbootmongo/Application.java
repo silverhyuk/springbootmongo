@@ -1,19 +1,18 @@
 package com.silverhyuk.springbootmongo;
 
-import account.Account;
+import com.silverhyuk.springbootmongo.account.Account;
+import com.silverhyuk.springbootmongo.account.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.core.MongoTemplate;
 
 @SpringBootApplication
 public class Application {
 
     @Autowired
-    MongoTemplate mongoTemplate;
-
+    AccountRepository accountRepository;
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -22,10 +21,10 @@ public class Application {
     public ApplicationRunner applicationRunner() {
         return args -> {
             Account account = new Account();
-            account.setEmail("silverhyuk@gmail.com");
-            account.setUsername("eunhyuk");
+            account.setEmail("silverhyuk11@gmail.com");
+            account.setUsername("silverhyuk11");
 
-            mongoTemplate.insert(account);
+            accountRepository.insert(account);
 
             System.out.println("finished");
         };

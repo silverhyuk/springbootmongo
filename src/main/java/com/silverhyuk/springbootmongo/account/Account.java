@@ -1,4 +1,4 @@
-package account;
+package com.silverhyuk.springbootmongo.account;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
